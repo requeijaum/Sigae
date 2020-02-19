@@ -1,0 +1,36 @@
+<form>
+    <div class="row justify-content-center" style="margin-top: 15px">
+        <div class="divInput">
+            <label for="recuperarEmail">Seu Email</label>
+            <input type="text" class="campo" id="recuperarEmail" placeholder="Seu Email" spellcheck="false" autocomplete="off" autocapitalize="none" disabled>
+        </div>
+    </div>
+    <div class="row justify-content-center" style="margin-top: 12px">
+        <button type="button" onclick="enviarRecuperacao()" class="btn btn-success botaoLogin" id="botaoEnviarRecuperacao">Prosseguir</button>
+    </div>
+    <div id="waitingEmail" style="display: none; margin-top: 20px">
+        <div class="row justify-content-center">
+            <div class="spinner-border text-secondary" id="spinner-login" role="status"></div>
+        </div>
+    </div>
+    <div id="erroEmail" style="display: none; margin-top: 10px">
+        <div class="row justify-content-center">
+            <div id="alert-login" class="alert alert-danger alert-dismissible fade show alert-login">
+                <h8 style="text-align:center">Não foi encontrado uma conta para este endereço de e-mail</h8>
+                <button type="button" class="close" onclick="mainEmail()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="sucessoEmail" style="display: none; margin-top: 10px">
+        <div class="row justify-content-center">
+            <div id="sucessoEmailAlert" class="alert alert-success alert-dismissible fade show alert-login">
+                <h8 style="text-align:center">Foi enviado um e-mail para a sua conta!</h8>
+                <button type="button" class="close" onclick="mainEmail()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
