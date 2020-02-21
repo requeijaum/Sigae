@@ -214,3 +214,7 @@ class Conjunto {
         $(".divLinhas").append("<div class=\"conjunto\" id=\"conjunto" + conjuntos + "\"></div>")
     }
 }
+
+function closeSide() {
+    $('.button-collapse').sideNav('hide');
+}

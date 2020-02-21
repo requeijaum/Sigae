@@ -83,18 +83,3 @@ function moduloInvoker(obj, linha) {
         obj.render(false)
     });
 }
-
-function closeSide() {
-    $('.button-collapse').sideNav('hide');
-}
-
-function setNodeSelect(node, linha) {
-    $(".linha").each(function() {
-        $("#" + this.id).css("color", "rgb(255, 255, 255)")
-    });
-    $(linha).css("cssText", "color: rgb(41, 170, 149) !important")
-    if(node != null) {
-        //$(node).css("cssText", "color: rgb(41, 170, 149) !important")
-    }
-
-}
