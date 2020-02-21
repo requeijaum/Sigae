@@ -1,3 +1,6 @@
+<?php
+
+?>
 <html>
 
 <head>
@@ -18,8 +21,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://datuhealth.github.io/floating-label/dist/floatingLabel.js"></script>
     <script src="./javascript.js"></script>
-    <script src="../componentes/moduloRender.js"></script>
-    <script src="../componentes/popup.js"></script>
+    <script src="../componentes/ModuloRender.js"></script>
+    <script src="../componentes/Popup.js"></script>
+    <script src="../componentes/Modulos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </head>
 
@@ -73,120 +77,7 @@
                             <br>
                         </div>
                         <div class="divLinhas">
-                            <div class="linha" id="linha1">
-                                <div style="display: table-cell;vertical-align: middle;">
-                                    <i style="margin-left: -5px; margin-top: 2px" class="material-icons">home</i>
-                                    <span class="textoNode">Início</span>
-                                </div>
-                            </div>
-                            <!-- NODE1 -->
-                            <div class="node" id="node1" name="1">
-                                <div style="display: table-cell;vertical-align: middle;">
-                                    <i style="margin-left: -5px; margin-top: 2px" class="material-icons">perm_contact_calendar</i>
-                                    <span class="textoNode">Calendários</span>
-                                    <div class="container">
-                                        <i id="arrow1" class="material-icons arrow">arrow_drop_up</i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="conjunto" id="conjunto1">
-                                <div class="linha hidden" id="linha2">
-                                    <div style="display: table-cell;vertical-align: middle;">
-                                        <span class="textoChildren">Calendário completo</span>
-                                    </div>
-                                </div>
-                                <div class="linha hidden" id="linha3">
-                                    <div style="display: table-cell;vertical-align: middle;">
-                                        <span class="textoChildren">Calendário de minha turma</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- NODE 2 -->
-                            <div class="node" id="node2" name="2">
-                                <div style="display: table-cell;vertical-align: middle;">
-                                    <i style="margin-left: -5px; margin-top: 2px" class="material-icons">school</i>
-                                    <span class="textoNode">Alunos e professores</span>
-                                    <div class="container">
-                                        <i id="arrow2" class="material-icons arrow">arrow_drop_up</i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="conjunto" id="conjunto2">
-                                <div class="linha hidden" id="linha4">
-                                    <div style="display: table-cell;vertical-align: middle;">
-                                        <span class="textoChildren">Minha turma</span>
-                                    </div>
-                                </div>
-                                <div class="linha hidden" id="linha5">
-                                    <div style="display: table-cell;vertical-align: middle;">
-                                        <span class="textoChildren">Alunos</span>
-                                    </div>
-                                </div>
-                                <div class="linha hidden" id="linha6">
-                                    <div style="display: table-cell;vertical-align: middle;">
-                                        <span class="textoChildren">Professores</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- NODE 3 -->
-                            <div class="node" id="node3" name="3">
-                                <div style="display: table-cell;vertical-align: middle;">
-                                    <i style="margin-left: -5px; margin-top: 2px" class="material-icons">people</i>
-                                    <span class="textoNode">Meu usuário</span>
-                                    <div class="container">
-                                        <i id="arrow3" class="material-icons arrow">arrow_drop_up</i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="conjunto" id="conjunto3">
-                                <div class="linha hidden" id="linha7">
-                                    <div style="display: table-cell;vertical-align: middle;">
-                                        <span class="textoChildren">Meus atendimentos inscritos</span>
-                                    </div>
-                                </div>
-                                <div class="linha hidden" id="linha8">
-                                    <div style="display: table-cell;vertical-align: middle;">
-                                        <span class="textoChildren">Alterar meus dados</span>
-                                    </div>
-                                </div>
-                                <div class="linha hidden" id="linha9">
-                                    <div style="display: table-cell;vertical-align: middle;">
-                                        <span class="textoChildren">Alterar minha senha</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- NODE 4 -->
-                            <div class="node" id="node4" name="4">
-                                <div style="display: table-cell;vertical-align: middle;">
-                                    <i style="margin-left: -5px; margin-top: 2px" class="material-icons">settings</i>
-                                    <span class="textoNode">Configurações</span>
-                                    <div class="container">
-                                        <i id="arrow4" class="material-icons arrow">arrow_drop_up</i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="conjunto" id="conjunto4">
-                                <div class="linha hidden" id="linha4">
-                                    <div style="display: table-cell;vertical-align: middle;">
-                                        <span class="textoChildren">Alterar Configurações</span>
-                                    </div>
-                                </div>
-                                <div class="linha hidden" id="linha5">
-                                    <div style="display: table-cell;vertical-align: middle;">
-                                        <span class="textoChildren">Sobre do SiGAÊ</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- EXIT -->
-                            <div class="linha" id="linha1">
-                                <div style="display: table-cell;vertical-align: middle;">
-                                    <i style="margin-left: -5px; margin-top: 2px" class="material-icons">exit_to_app</i>
-                                    <span class="textoNode">Finalizar sessão</span>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </ul>
@@ -194,8 +85,10 @@
                     <div class="breadcrumbs breadcrumbs-tooltipped" data-position="bottom" data-tooltip="">
                         <i class="small material-icons breadcrumbs-icone">home</i>
                         <h4 class="breadcrumbsTitulo"></h4>
-                    </div> 
+                    </div>
                     <img class="imgCarregamento" id="carregamentoModulo" src="../icones/spinner.svg">
+                    <a href="#" onclick="selectLinha('#linha2')">testar</a>
+                    <a href="#" onclick="removeAllSelection()">testar2</a>
                 </div>
                 <div class="content-head"></div>
             </main>

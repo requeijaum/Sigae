@@ -19,7 +19,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
     <script src="./javascript.js"></script>
-    <script src="./componentes/popup.js"></script>
+    <script src="./componentes/Popup.js"></script>
 </head>
 
 <body>

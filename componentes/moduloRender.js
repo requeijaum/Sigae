@@ -1,6 +1,6 @@
 class Modulo {
 
-    name; titulo; icone; file; css; js; scroll;
+    name; titulo; icone; file; css; js; scroll; node; linha;
     constructor(name, titulo, icone, file) {
         this.name = name;
         this.file = file;
@@ -24,14 +24,16 @@ class Modulo {
         this.scroll = boolean;
     }
 
-    setParent(id) {
-        moduloInvoker(this, id)
+    setParent(node, linha) {
+        this.node = node;
+        this.linha = linha;
+        moduloInvoker(this, linha)
     }
 
     render(auto) {
         closeSide()
         var js = this.js, titulo = this.titulo, time = 0;
-        $("modulo").remove();
+        $("modulo").empty();
         $(".content-head").empty()
         $(".breadcrumbs").hide();
 
@@ -59,7 +61,7 @@ class Modulo {
         }
 
         setTimeout(function () {
-            $("modulo").remove();
+            $("modulo").empty();
             $("#carregamentoModulo").hide();
             $(".breadcrumbs").show();
             $(".breadcrumbsTitulo").text(titulo)
@@ -70,20 +72,29 @@ class Modulo {
                 window["init_" + name]()
             }
         }, time);
+
+        setNodeSelect(this.node, this.linha)
+        
     }
 }
 
-function moduloInvoker(obj, id) {
-    $(id).click(function () {
+function moduloInvoker(obj, linha) {
+    $(linha).click(function () {
         obj.render(false)
     });
-    $(".linha").each(function() {
-        $(this.id).css("color", "rgb(255, 255, 255)")
-    });
-    $(id).css("color", "rgb(41, 170, 149)")
-    
 }
 
 function closeSide() {
     $('.button-collapse').sideNav('hide');
+}
+
+function setNodeSelect(node, linha) {
+    $(".linha").each(function() {
+        $("#" + this.id).css("color", "rgb(255, 255, 255)")
+    });
+    $(linha).css("cssText", "color: rgb(41, 170, 149) !important")
+    if(node != null) {
+        //$(node).css("cssText", "color: rgb(41, 170, 149) !important")
+    }
+
 }

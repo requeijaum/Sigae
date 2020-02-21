@@ -127,6 +127,16 @@ body {
     padding-bottom: 100px !important;
 }
 
+.sideContainer {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.iconeNode {
+    margin-left: -5px; 
+    margin-top: 2px
+}
+
 .node,
 .linha {
     color: white;
@@ -311,5 +321,3 @@ main {
 label {
     margin-bottom: 0px;
 }
-
-

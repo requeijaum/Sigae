@@ -1,5 +1,5 @@
 function init() {
-    menu()
+    //menu()
     modulos()
 }
 
@@ -9,31 +9,18 @@ function menu() {
             $(this).toggleClass('is-active');
         });
     });
-    $("#node1, #node2, #node3, #node4").on('click', function (e) {
-        var numero = e.currentTarget.getAttribute("name");
-        var elemento = "conjunto" + e.currentTarget.getAttribute("name");
-        if ($("#" + elemento).is(":hidden")) {
-            $("#node" + numero).css("color", "rgb(127, 148, 197)");
-            $("#node" + numero).css("background-color", "rgb(50, 50, 61)");
-            $("#arrow" + numero).css("transform", "rotateZ(180deg)");
-            $("#" + elemento).show(100);
-        } else {
-            $("#node" + numero).css("color", "white");
-            $("#node" + numero).css("background-color", "rgb(59, 59, 75)");
-            $("#arrow" + numero).css("transform", "rotateZ(90deg)");
-            $("#" + elemento).hide(100);
-        }
-    });
 
 }
 
-function modulos() {
+/*function modulos() {
     inicio = new Modulo("inicio", "Início", "home", "../modulos/inicio")
     inicio.setCss(true)
+    inicio.setParent(null, "#linha1")
     inicio.setAuto(true)
-    inicio.setParent("#linha1")
-    //moduloInvoker(inicio, "#linha1")
-}
+    
+    calendarioCompleto = new Modulo("calendarioCompleto", "Calendário completo", "perm_contact_calendar", "../modulos/calendario")
+    calendarioCompleto.setParent("#node1", "#linha2")
+}*/
 
 function setNode(numero) {
     $("#node" + numero).css("color", "rgb(127, 148, 197)");
