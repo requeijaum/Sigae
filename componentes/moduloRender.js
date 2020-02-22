@@ -1,50 +1,29 @@
+var arrayModulos = []
+
 class Modulo {
 
-    name; titulo; icone; file; css; js; scroll; node; linha;
-    constructor(name, titulo, icone, file) {
-        this.name = name;
-        this.file = file;
+    id; pasta; titulo; css; js; linha;
+    
+    constructor(id, pasta, titulo, css, js, linha) {
+        this.id = id;
+        this.pasta = pasta;
         this.titulo = titulo;
-        this.icone = icone;
-    }
-
-    setAuto() {
-        this.render(true)
-    }
-
-    setCss(boolean) {
-        this.css = boolean;
-    }
-
-    setJS(boolean) {
-        this.js = boolean;
-    }
-
-    setScroll(boolean) {
-        this.scroll = boolean;
-    }
-
-    setParent(node, linha) {
-        this.node = node;
+        this.css = css;
+        this.js = js;
         this.linha = linha;
-        moduloInvoker(this, linha)
+        arrayModulos.push(this)
     }
 
-    render(auto) {
-        closeSide()
-        var js = this.js, titulo = this.titulo, time = 0;
+    invoker() {
         $("modulo").empty();
         $(".content-head").empty()
         $(".breadcrumbs").hide();
+        $("#carregamentoModulo").show();
+        closeSide()
 
-        if (auto == false) {
-            $("#carregamentoModulo").show();
-            time = 700;
-        }
-        var html;
-
+        var html, id = this.id, js = this.js, titulo = this.titulo;
         $.ajax({
-            url: this.file + "/index.html",
+            url: this.pasta + "/index.html",
             type: 'get',
             dataType: 'html',
             async: false,
@@ -54,10 +33,10 @@ class Modulo {
         });
 
         if (this.css == true) {
-            $(".content-head").append("<link rel=\"stylesheet\" href=\" " + this.file + "/css.css\">");
+            $(".content-head").append("<link rel=\"stylesheet\" href=\" " + this.pasta + "/css.css\">");
         }
         if (this.js == true) {
-            $(".content-head").append("<script src=\" " + this.file + "/javascript.js\"></script>");
+            $(".content-head").append("<script src=\" " + this.pasta + "/javascript.js\"></script>");
         }
 
         setTimeout(function () {
@@ -69,17 +48,8 @@ class Modulo {
             $(".breadcrumbs-tooltipped").tooltip();
             $(".content").append(html)
             if (js == true) {
-                window["init_" + name]()
+                window["init_" + id]()
             }
-        }, time);
-
-        setNodeSelect(this.node, this.linha)
-        
+        }, 500);
     }
-}
-
-function moduloInvoker(obj, linha) {
-    $(linha).click(function () {
-        obj.render(false)
-    });
 }

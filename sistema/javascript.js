@@ -1,6 +1,6 @@
 function init() {
-    //menu()
-    modulos()
+    menu()
+    sideMenus()
 }
 
 function menu() {

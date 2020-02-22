@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Pedro Cerqueira Mota, João Costa Neto, Rafael Requião" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../componentes/APIs/bootstrap.min.css">
     <link rel="stylesheet" href="./css.css">
     <link rel="stylesheet" href="../componentes/popup.css">
     <link rel="stylesheet" href="./responsive.css">
     <link rel="stylesheet" href="./componentes/loading.css">
     <link rel="icon" href="./icones/si.png">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://datuhealth.github.io/floating-label/dist/floatingLabel.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+    <script src="../componentes/APIs/jquery-3.1.1.min.js"></script>
+    <script src="../componentes/APIs/sweetalert2@8.js"></script>
+    <script src="../componentes/APIs/floatingLabel.js"></script>
+    <script src="../componentes/APIs/popper.min.js"></script>
+    <script src="../componentes/APIs/bootstrap.min.js"></script>
+    <script src="../componentes/APIs/jquery.mask.min.js"></script>
     <script src="./javascript.js"></script>
     <script src="./componentes/Popup.js"></script>
 </head>

@@ -9,22 +9,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Pedro Cerqueira Mota, João Costa Neto, Rafael Requião" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="../componentes/APIs/bootstrap.min.css">
+    <link rel="stylesheet" href="../componentes/APIs/materialize.min.css">
     <link rel="stylesheet" href="../componentes/APIs/hamburgers.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../componentes/APIs/icon.css">
     <link rel="stylesheet" href="./css.css">
     <link rel="stylesheet" href="./responsive.css">
     <link rel="stylesheet" href="../componentes/loading.css">
     <link rel="icon" href="../icones/si.png">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://datuhealth.github.io/floating-label/dist/floatingLabel.js"></script>
+    <script src="../componentes/APIs/jquery-3.1.1.min.js"></script>
+    <script src="../componentes/APIs/sweetalert2@8.js"></script>
+    <script src="../componentes/APIs/floatingLabel.js"></script>
     <script src="./javascript.js"></script>
     <script src="../componentes/ModuloRender.js"></script>
     <script src="../componentes/Popup.js"></script>
     <script src="../componentes/Modulos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="../componentes/APIs/materialize.min.js"></script>
+    <script src="../componentes/APIs/param.js"></script>
 </head>
 
 <body>
@@ -87,8 +88,6 @@
                         <h4 class="breadcrumbsTitulo"></h4>
                     </div>
                     <img class="imgCarregamento" id="carregamentoModulo" src="../icones/spinner.svg">
-                    <a href="#" onclick="selectLinha('#linha2')">testar</a>
-                    <a href="#" onclick="removeAllSelection()">testar2</a>
                 </div>
                 <div class="content-head"></div>
             </main>
@@ -109,7 +108,8 @@
                     onClose: function(el) {
                         $(".hamburger").removeClass('is-active');
                         $(".footer").css('display', "block");
-                    }
+                    },
+                    draggable: false
                 });
                 init()
                 window.onload = function() {
