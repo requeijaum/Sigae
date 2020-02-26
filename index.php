@@ -27,6 +27,13 @@
         <img class="imgCarregamento" src="./icones/loading.svg">
         <div class="noJS">Essa página precisa de Javascript. Ative-o!</div>
     </div>
+    <noscript>
+        <style type="text/css">
+            .noJS {
+                display: block;
+            }
+        </style>
+    </noscript>
     <div class="centro">
         <div class="parteBaixo">
             <h2 class="copyright">© 2020 SiGAÊ | Desenvolvimento: <a style="color: rgb(40, 167, 69)" href="https://portal.ifba.edu.br" target="_blank">IFBA</a></h2>
@@ -75,14 +82,7 @@
                 </div>
             </div>
         </form>
-    </div>
-    <noscript>
-        <style type="text/css">
-            .textoCarregar {
-                display: block;
-            }
-        </style>
-    </noscript>
+    </div> 
     <script class="script">
         window.onload = function () {
             setTimeout(function () {

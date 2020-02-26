@@ -2,12 +2,13 @@ var arrayModulos = []
 
 class Modulo {
 
-    id; pasta; titulo; css; js; linha;
-    
-    constructor(id, pasta, titulo, css, js, linha) {
+    id; pasta; titulo; icone; css; js; linha;
+
+    constructor(id, pasta, titulo, icone, css, js, linha) {
         this.id = id;
         this.pasta = pasta;
         this.titulo = titulo;
+        this.icone = icone;
         this.css = css;
         this.js = js;
         this.linha = linha;
@@ -21,17 +22,20 @@ class Modulo {
         $("#carregamentoModulo").show();
         closeSide()
 
-        var html, id = this.id, js = this.js, titulo = this.titulo;
+        var classe = this;
         $.ajax({
             url: this.pasta + "/index.html",
             type: 'get',
             dataType: 'html',
-            async: false,
+            async: true,
             success: function (data) {
-                html = data;
+                classe.render(data)
             }
         });
+    }
 
+    render(data) {
+        var classe = this;
         if (this.css == true) {
             $(".content-head").append("<link rel=\"stylesheet\" href=\" " + this.pasta + "/css.css\">");
         }
@@ -43,13 +47,20 @@ class Modulo {
             $("modulo").empty();
             $("#carregamentoModulo").hide();
             $(".breadcrumbs").show();
-            $(".breadcrumbsTitulo").text(titulo)
-            $(".breadcrumbs").attr("data-tooltip", titulo);
-            $(".breadcrumbs-tooltipped").tooltip();
-            $(".content").append(html)
-            if (js == true) {
-                window["init_" + id]()
+            $(".breadcrumbsTitulo").text(classe.titulo)
+            $(".breadcrumbs-icone").text(classe.icone)
+            $(".breadcrumbs").attr("data-tooltip", classe.titulo);
+            $(".breadcrumbs-tooltipped").tooltip({ delay: 50 });
+            $(".content").append(data)
+            if (classe.js == true) {
+                try {
+                    window["init_" + classe.id]()
+                }
+                catch (err) {
+                    erro("A função " + "'init_" + classe.id + "' não existe")
+                }
             }
         }, 500);
+
     }
 }

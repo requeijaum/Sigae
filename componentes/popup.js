@@ -22,14 +22,14 @@ class Popup {
     }
 
     invoker() {
-        var html;
+        var classe = this;
         $.ajax({
             url: this.file + "/index.html",
             type: 'get',
             dataType: 'html',
             async: false,
             success: function (data) {
-                html = data;
+                classe.html = data;
             }
         });
         if (this.css == true) {
@@ -38,11 +38,10 @@ class Popup {
         if (this.js == true) {
             $("body").append("<script src=\" " + this.file + "/javascript.js\"></script>");
         }
-        this.html = html;
     }
 
     show() {
-        var name = this.name, html = this.html, js = this.js;
+        var classe = this;
         Swal.fire({
             title: '<img src="./icones/sigae.svg" width="150" height="91"><br><h1 style="font-size: 18px">' + this.titulo + '</h1>',
             animation: false,
@@ -51,11 +50,11 @@ class Popup {
             cancelButtonColor: '#d33',
             showConfirmButton: false,
             onOpen: function () {
-                if (js == true) {
-                    window["init_" + name]()
+                if (classe.js == true) {
+                    window["init_" + classe.name]()
                 }
             },
-            html: `${html}`
+            html: `${classe.html}`
         })
         $(".swal2-popup").css("cssText", "height: " + this.altura + " !important; width: " + this.largura + " !important; display:flex");
         if (this.scroll == true) {

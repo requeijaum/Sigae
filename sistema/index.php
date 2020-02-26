@@ -24,6 +24,8 @@
     <script src="../componentes/ModuloRender.js"></script>
     <script src="../componentes/Popup.js"></script>
     <script src="../componentes/Modulos.js"></script>
+    <script src="../componentes/Misc.js"></script>
+    <script src="../componentes/Console.js"></script>
     <script src="../componentes/APIs/materialize.min.js"></script>
     <script src="../componentes/APIs/param.js"></script>
 </head>
@@ -35,7 +37,7 @@
     </div>
     <noscript>
         <style type="text/css">
-            .textoCarregar {
+            .noJS {
                 display: block;
             }
         </style>
@@ -78,13 +80,13 @@
                             <br>
                         </div>
                         <div class="divLinhas">
-                            
+
                         </div>
                     </div>
                 </ul>
                 <div class="content">
                     <div class="breadcrumbs breadcrumbs-tooltipped" data-position="bottom" data-tooltip="">
-                        <i class="small material-icons breadcrumbs-icone">home</i>
+                        <i class="small material-icons breadcrumbs-icone"></i>
                         <h4 class="breadcrumbsTitulo"></h4>
                     </div>
                     <img class="imgCarregamento" id="carregamentoModulo" src="../icones/spinner.svg">
@@ -101,16 +103,11 @@
                         <a class="linkFooter" id="linkFooter2" href="https://portal.ifba.edu.br/" target="_blank">IFBA</a></p>
                     </h4>
                 </div>
+                <div class="row justify-content-center footerLinha">
+                    <h6 class="versao">null</h6>
+                </div>
             </footer>
             <script>
-                $(".side-nav.fixed").css("display", "block");
-                $(".button-collapse").sideNav({
-                    onClose: function(el) {
-                        $(".hamburger").removeClass('is-active');
-                        $(".footer").css('display', "block");
-                    },
-                    draggable: false
-                });
                 init()
                 window.onload = function() {
                     setTimeout(function() {
@@ -119,6 +116,17 @@
                     }, 500);
                 }
             </script>
+        </div>
+        <div id="consoleModal" class="modal consoleModal bottom-sheet">
+            <div class="modal-content">
+                <b class="consoleTexto">Console do SiGAÊ</b>
+                <div class="divBotoes">
+                    <a class="consoleBotao" style="margin-right: 5px" onclick="limparConsole()">Limpar</a>
+                    <a class="consoleBotao consoleBotao" onclick="fecharConsole()">Fechar</a>
+                </div>
+            </div>
+            <div class="conteudoConsole"></div>
+            <div class="noAlertas">Não há nenhum alerta. Tudo tranquilo por aqui</div>
         </div>
     </div>
 </body>

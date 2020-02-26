@@ -8,14 +8,14 @@ function sideMenus() {
     node1 = new Node("Calendários", "perm_contact_calendar")
     conjunto1 = new Conjunto()
     node1.add(conjunto1)
-    linha2 = new Linha("Calendário completo", null, "#conjunto1", "--calendarioCompleto");
-    linha3 = new Linha("Calendário de minha turma", null, "#conjunto1", "--calendarioMinhaTurma");
+    linha2 = new Linha("Calendário de atendimentos", null, "#conjunto1", "--calendarioCompleto");
+    linha3 = new Linha("Meus atendimentos agendados", null, "#conjunto1", "--atendimentosAgendados");
+    linha4 = new Linha("Meus atendimentos inscritos", null, "#conjunto1", "--atendimentosInscritos");
 
     //Alunos e professores
     node2 = new Node("Alunos e professores", "school")
     conjunto2 = new Conjunto()
     node2.add(conjunto2)
-    linha4 = new Linha("Minha turma", null, "#conjunto2", "--minhaTurma");
     linha5 = new Linha("Alunos", null, "#conjunto2", "--alunos");
     linha6 = new Linha("Docentes e monitores", null, "#conjunto2", "--docentes");
 
@@ -23,15 +23,15 @@ function sideMenus() {
     node3 = new Node("Meu usuário", "people")
     conjunto3 = new Conjunto()
     node3.add(conjunto3)
-    linha7 = new Linha("Meus atendimentos inscritos", null, "#conjunto3", "--meusAtendimentosInscritos");
-    linha8 = new Linha("Alterar meus dados", null, "#conjunto3", "--alterarDados");
-    linha9 = new Linha("Alterar minha senha", null, "#conjunto3", "mudarSenha()");
+    linha7 = new Linha("Alterar meus dados", null, "#conjunto3", "--alterarDados");
+    linha8 = new Linha("Alterar minha senha", null, "#conjunto3", "mudarSenha()");
 
     //Configurações
     node4 = new Node("Configurações", "settings")
     conjunto4 = new Conjunto()
     node4.add(conjunto4)
-    linha10 = new Linha("Alterar configurações", null, "#conjunto4", "--alterarConfig");
+    linha9 = new Linha("Alterar configurações", null, "#conjunto4", "--alterarConfig");
+    linha10 = new Linha("Abrir console", null, "#conjunto4", "abrirConsole()");
     linha11 = new Linha("Sobre o SiGAÊ", null, "#conjunto4", "sobre()");
 
     //Finalizar sessão
@@ -41,9 +41,9 @@ function sideMenus() {
 }
 
 function modulos() {
-    inicio = new Modulo("inicio", "../modulos/inicio", "Início", true, false, linha1);
-    calendarioCompleto = new Modulo("calendarioCompleto", "../modulos/calendarioCompleto", "Calendário de atendimentos", false, false, linha2);
-    calendarioMinhaTurma = new Modulo("calendarioMinhaTurma", "../modulos/calendarioMinhaTurma", "Calendário de atendimentos para minha turma", false, false, linha3);
+    inicio = new Modulo("inicio", "../modulos/inicio", "Início", "home", true, false, linha1);
+    calendarioCompleto = new Modulo("calendarioCompleto", "../modulos/calendarioCompleto", "Calendário de atendimentos", "perm_contact_calendar", false, false, linha2);
+    calendarioMinhaTurma = new Modulo("calendarioMinhaTurma", "../modulos/calendarioMinhaTurma", "Calendário de atendimentos para minha turma", "perm_contact_calendar", false, false, linha3);
 
     setModuloParam()
 }
@@ -64,9 +64,12 @@ function setModuloParam() {
 
 
 /* funções da sidenav */
-function closeAll() {
+function closeAll(except) {
     for (var i = 0; i < arrayNodes.length; i++) {
-        arrayNodes[i].close()
+        node = arrayNodes[i]
+        if (node != except) {
+            arrayNodes[i].close()
+        }
     }
 }
 
@@ -92,8 +95,17 @@ function selectLinha(linha) {
     }
 }
 
+function nodeDaLinha(linha) {
+    for (var i = 0; i < arrayLinhas.length; i++) {
+        obj = arrayLinhas[i]
+        if (obj == linha && obj.conjunto != null) {
+            node = arrayNodes[obj.conjuntoNumero - 1]
+            return node;
+        }
+    }
+}
+
 function removeAllSelection() {
-    //closeAll()
     for (var i = 0; i < arrayLinhas.length; i++) {
         obj = arrayLinhas[i]
         obj.removeSelect()
@@ -166,16 +178,17 @@ class Linha {
 
     do(click) {
         removeAllSelection()
+        closeAll(nodeDaLinha(this))
+        selectLinha(this)
         if (this.action.startsWith("--")) {
-            selectLinha(this)
-            var modulo = this.action.substring(2);
+            var modulo = this.action.substring(2), achou = false;
             for (var i = 0; i < arrayModulos.length; i++) {
                 var moduloDoArray = arrayModulos[i]
                 if (moduloDoArray.id == modulo) {
+                    achou = true;
                     moduloDoArray.invoker()
-                   // alert(click)
                     if (moduloDoArray.linha.id != 1) {
-                        if(click == 'click') {
+                        if (click == 'click') {
                             addParam("modulo", moduloDoArray.id)
                         }
                     } else {
@@ -183,9 +196,20 @@ class Linha {
                     }
                 }
             }
+            if(achou == false) {
+                erro("O módulo '" + modulo + "' não existe")
+                removeAllSelection()
+            }
         }
         if (this.action.endsWith("()")) {
-
+            try {
+                var fun = this.action
+                fun = fun.slice(0, -2);
+                window[fun]()
+            } catch (err) {
+                erro("A função " + "'init_" + this.action + "' não existe")
+                removeAllSelection()
+            }
         }
     }
 

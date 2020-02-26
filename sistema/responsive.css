@@ -129,6 +129,16 @@
     .copyright {
         font-size: 17px
     }
-}
 
-/* navbar */
+    .consoleTexto {
+        font-size: 20px;
+    }
+
+    .modal-content {
+        padding-left: 8px !important;
+    }
+
+    .noAlertas {
+        font-size: 14px;
+    }
+}

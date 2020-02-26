@@ -133,7 +133,7 @@ body {
 }
 
 .iconeNode {
-    margin-left: -5px; 
+    margin-left: -5px;
     margin-top: 2px
 }
 
@@ -262,7 +262,7 @@ main {
 .copyright-titulo {
     font-size: 20px;
     color: rgb(151, 176, 235);
-    margin-top: 40px;
+    margin-top: 35px;
     margin-bottom: 10px;
     text-align: center;
 }
@@ -270,7 +270,14 @@ main {
 .copyright {
     font-size: 17px;
     color: aliceblue;
-    margin-top: 40px;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+.versao {
+    font-size: 16px;
+    color: rgb(151, 176, 235);
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 
@@ -286,6 +293,67 @@ main {
 #linkFooter2,
 #brTitulo {
     display: none;
+}
+
+/* Console */
+
+.consoleModal {
+    overflow-y: hidden !important;
+}
+
+.modal-content {
+    height: 82px !important;
+}
+
+.conteudoConsole {
+    overflow-y: auto;
+    overflow-x: auto;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: calc(100% - 82px)
+}
+
+.divBotoes {
+    position: absolute;
+    right: 20px;
+}
+
+.consoleBotao {
+    font-size: 18px;
+    color: rgb(50, 50, 61) !important;
+}
+
+.consoleBotao:hover {
+    cursor: pointer;
+}
+
+.consoleTexto {
+    font-size: 22px;
+}
+
+.consoleContent {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+.toastTexto,
+.toast-action,
+.consoleContent {
+    white-space: nowrap;
+}
+
+.noAlertas {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+    font-size: 18px;
+    color: grey;
 }
 
 /* MISC */
