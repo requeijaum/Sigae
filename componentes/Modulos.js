@@ -32,10 +32,10 @@ function sideMenus() {
     node4.add(conjunto4)
     linha9 = new Linha("Alterar configurações", null, "#conjunto4", "--alterarConfig");
     linha10 = new Linha("Abrir console", null, "#conjunto4", "abrirConsole()");
-    linha11 = new Linha("Sobre o SiGAÊ", null, "#conjunto4", "sobre()");
+    linha11 = new Linha("Sobre o SiGAÊ", null, "#conjunto4", "sobreSigae()");
 
     //Finalizar sessão
-    linha12 = new Linha("Finalizar sessão", "exit_to_app", null, "mudarSenha()");
+    linha12 = new Linha("Finalizar sessão", "exit_to_app", null, "finalizarSessao()");
 
     modulos()
 }
@@ -207,8 +207,8 @@ class Linha {
                 fun = fun.slice(0, -2);
                 window[fun]()
             } catch (err) {
-                erro("A função " + "'init_" + this.action + "' não existe")
-                removeAllSelection()
+               erro("A função '" + this.action + "' não existe")
+               removeAllSelection()
             }
         }
     }

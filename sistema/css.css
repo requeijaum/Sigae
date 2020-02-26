@@ -209,9 +209,9 @@ main {
 
 /*breadcrumbs*/
 .breadcrumbs {
-    display: inline-block;
+    display: inline-flex;
     border-bottom: 1px solid rgb(92, 102, 188);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -231,16 +231,18 @@ main {
 .breadcrumbs-icone {
     margin-top: 7px;
     font-size: 30px !important;
-    color: rgb(92, 102, 188)
+    color: rgb(92, 102, 188);
+    display: inline-flex !important; 
 }
 
 .breadcrumbsTitulo {
-    display: inline-block;
+    display: inline-flex;
     margin-top: 10px;
     margin-bottom: 0px;
     font-size: 26px;
     color: rgb(92, 102, 188);
     font-family: Comfortaa;
+    white-space: nowrap;
 }
 
 /* FOOTER */
@@ -311,7 +313,7 @@ main {
     position: absolute;
     bottom: 0px;
     width: 100%;
-    height: calc(100% - 82px)
+    height: calc(100% - 82px);
 }
 
 .divBotoes {
@@ -340,6 +342,23 @@ main {
     margin-left: 20px;
 }
 
+.conteudoConsoleHorario {
+    color: darkslategray;
+    float: left;
+}
+
+.console-erro {
+    color: crimson;
+}
+
+.toastTexto {
+    margin-left: 8px;
+}
+
+.toast-erro {
+    color: crimson;
+}
+
 .toastTexto,
 .toast-action,
 .consoleContent {
@@ -351,7 +370,7 @@ main {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    white-space: nowrap;
+    text-align: center;
     font-size: 18px;
     color: grey;
 }

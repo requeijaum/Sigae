@@ -13,6 +13,13 @@
     display: block !important;
 }
 
+.tituloPopup {
+    margin: 0 0 .4em !important;
+    padding: 0 !important;
+    color: #595959 !important;
+    font-weight: 600 !important;
+}
+
 .swal2-modal .swal2-styled:focus {
     -webkit-box-shadow: none;
     box-shadow: none;

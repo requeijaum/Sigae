@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./css.css">
     <link rel="stylesheet" href="./responsive.css">
     <link rel="stylesheet" href="../componentes/loading.css">
+    <link rel="stylesheet" href="../componentes/popup.css">
     <link rel="icon" href="../icones/si.png">
     <script src="../componentes/APIs/jquery-3.1.1.min.js"></script>
     <script src="../componentes/APIs/sweetalert2@8.js"></script>
@@ -109,12 +110,12 @@
             </footer>
             <script>
                 init()
-                window.onload = function() {
+                document.addEventListener("DOMContentLoaded", function(event) {
                     setTimeout(function() {
                         $(".divCarregamento").hide()
                         $(".tudo").fadeIn(1200);
                     }, 500);
-                }
+                });
             </script>
         </div>
         <div id="consoleModal" class="modal consoleModal bottom-sheet">
@@ -126,7 +127,7 @@
                 </div>
             </div>
             <div class="conteudoConsole"></div>
-            <div class="noAlertas">Não há nenhum alerta. Tudo tranquilo por aqui</div>
+            <div class="noAlertas">Não há nenhum alerta ou erro</div>
         </div>
     </div>
 </body>

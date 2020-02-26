@@ -1,39 +1,22 @@
-.card {
-    width: 100%;
-    background-color: rgb(69, 69, 85) !important;
+.inicio-nome {
+    font-size: 32px;
+    color: rgb(78, 95, 120);
+    white-space: nowrap;
 }
 
-.abaixoInicio {
+.divInicioLinks {
     margin-top: 30px;
-    width: 100%;
-}
-
-.card-title {
-    font-size: 35px !important;
-}
-
-.card-text {
-    font-size: 18px;
 }
 
 .linkCard {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(78, 95, 120) !important;
+    transition: 200ms;
     cursor: pointer
 }
 
-.esquerdoAbaixo {
-    width: 40%;
-    float: left;
-    height: 250px;
-    background-color: rgb(238, 238, 238);
-    border-radius: 2px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-}
-
-.direitoAbaixo {
-    width: 40%;
-    float: right;
-    height: 250px;
-    background-color: rgb(238, 238, 238);
-    border-radius: 2px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+.linkCard:hover {
+    color: rgb(40, 167, 69) !important;
 }

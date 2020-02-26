@@ -43,16 +43,21 @@ class Popup {
     show() {
         var classe = this;
         Swal.fire({
-            title: '<img src="./icones/sigae.svg" width="150" height="91"><br><h1 style="font-size: 18px">' + this.titulo + '</h1>',
+            title: '<img src="../icones/sigae.svg" width="150" height="91"><br><h1 class="tituloPopup" style="font-size: 18px">' + this.titulo + '</h1>',
             animation: false,
             cancelButtonText: 'Fechar',
             showCancelButton: true,
             cancelButtonColor: '#d33',
             showConfirmButton: false,
-            onOpen: function () {
+            onOpen: function() {
                 if (classe.js == true) {
                     window["init_" + classe.name]()
                 }
+            },
+            onClose: function() {
+                try {
+                    removeAllSelection()
+                } catch(ex) {}
             },
             html: `${classe.html}`
         })

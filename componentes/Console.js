@@ -16,10 +16,19 @@ function renderConsole() {
 }
 
 function erro(texto) {
-    var toast = $("<span class=\"toastTexto\">" + texto + "</span>").add($('<button onclick="abrirConsole()" class="btn-flat toast-action">Abrir console</button>'));
+    var toast = $("<i class=\"material-icons toast-erro\">cancel</i><span class=\"toastTexto\">" + texto + "</span>").add($('<button onclick="abrirConsole()" class="btn-flat toast-action">Abrir console</button>'));
     Materialize.toast(toast, 4000);
     var date = new Date();
-    var textoFinal = date.getHours() + ":" + date.getMinutes() + "&emsp;&emsp;" + texto;
+    var textoFinal = "<div class=\"conteudoConsoleHorario console-erro\">[Erro] " + date.getHours() + ":" + date.getMinutes() + "</div>&nbsp; - " + texto;
+    arrayConsole.push(textoFinal)
+    $(".noAlertas").hide()
+}
+
+function alerta(texto) {
+    var toast = $("<i class=\"material-icons toast-erro\">add_alert</i><span class=\"toastTexto\">" + texto + "</span>").add($('<button onclick="abrirConsole()" class="btn-flat toast-action">Abrir console</button>'));
+    Materialize.toast(toast, 4000);
+    var date = new Date();
+    var textoFinal = "<div class=\"conteudoConsoleHorario\">[Alerta] " + date.getHours() + ":" + date.getMinutes() + "</div>&nbsp; - " + texto;
     arrayConsole.push(textoFinal)
     $(".noAlertas").hide()
 }
