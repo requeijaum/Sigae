@@ -30,9 +30,10 @@ function mainEmail() {
     $("#waitingEmail").hide()
 }
 
-class Campo {
+class Campo {                                   // tá seguindo ECMAScript de qual ano ?
+                                                // vamos seguir o ES6 e fim de papo...
 
-    input; enterClick; enterComponent
+    //input; enterClick; enterComponent;        // o construtor se vira... Safari 11.1.2 (2018) reclamou disso
 
     constructor(input, enterClick, enterComponent) {
         this.input = input;

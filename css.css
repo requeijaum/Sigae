@@ -191,16 +191,16 @@ h8 {
 }
 
 #login {
-    content: url("../icones/usuario.png");
-    background-image: url(../icones/usuario-disable.png);
+    content: url("./icones/usuario.png");
+    background-image: url(./icones/usuario-disable.png);
 }
 
 #senha {
-    content: url("../icones/senha.png");
-    background-image: url(../icones/senha-disable.png);
+    content: url("./icones/senha.png");
+    background-image: url(./icones/senha-disable.png);
 }
 
 #recuperarEmail {
-    content: url("../icones/email.png");
-    background-image: url(../icones/email-disable.png);
+    content: url("./icones/email.png");
+    background-image: url(./icones/email-disable.png);
 }

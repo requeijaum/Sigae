@@ -1,3 +1,18 @@
+<?php
+    /* 
+        Script da home-page do SIGAE
+
+        Notas de Rafael: 
+        
+            Verificar caminho relativo dos assets... não sabemos se o serviço estará em execução
+            com o projeto todo em / (root, raiz, subdomínio "sigae.ifba.edu.br") ou sub-pasta (ifba.edu.br/sigae)
+
+            Estarei usando caminho em relação à sub-pasta "Sigae" (https://localhost/Sigae/)
+
+    */
+
+?>
+
 <html>
 
 <head>
@@ -6,20 +21,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Pedro Cerqueira Mota, João Costa Neto, Rafael Requião" />
-    <link rel="stylesheet" href="../componentes/APIs/bootstrap.min.css">
+    <link rel="stylesheet" href="./componentes/APIs/bootstrap.min.css">
     <link rel="stylesheet" href="./css.css">
-    <link rel="stylesheet" href="../componentes/popup.css">
+    <link rel="stylesheet" href="./componentes/popup.css">
     <link rel="stylesheet" href="./responsive.css">
     <link rel="stylesheet" href="./componentes/loading.css">
     <link rel="icon" href="./icones/si.png">
-    <script src="../componentes/APIs/jquery-3.1.1.min.js"></script>
-    <script src="../componentes/APIs/sweetalert2@8.js"></script>
-    <script src="../componentes/APIs/floatingLabel.js"></script>
-    <script src="../componentes/APIs/popper.min.js"></script>
-    <script src="../componentes/APIs/bootstrap.min.js"></script>
-    <script src="../componentes/APIs/jquery.mask.min.js"></script>
-    <script src="./javascript.js"></script>
-    <script src="./componentes/Popup.js"></script>
+    <script language="javascript" src="./componentes/APIs/jquery-3.1.1.min.js"></script>
+    <script language="javascript" src="./componentes/APIs/sweetalert2@8.js"></script>
+    <script language="javascript" src="./componentes/APIs/floatingLabel.js"></script>
+    <script language="javascript" src="./componentes/APIs/popper.min.js"></script>
+    <script language="javascript" src="./componentes/APIs/bootstrap.min.js"></script>
+    <script language="javascript" src="./componentes/APIs/jquery.mask.min.js"></script>
+    <script language="javascript" src="./javascript.js"></script>
+    <script language="javascript" src="./componentes/Popup.js"></script>
 </head>
 
 <body>
@@ -28,7 +43,7 @@
         <div class="noJS">Essa página precisa de Javascript. Ative-o!</div>
     </div>
     <noscript>
-        <style type="text/css">
+        <style language="text/css">
             .noJS {
                 display: block;
             }
@@ -48,17 +63,17 @@
             <div class="row justify-content-center linha1">
                 <div class="divInput">
                     <label for="login">Sua matrícula</label>
-                    <input type="number" class="campo" id="login" placeholder="Sua matrícula" spellcheck="false" autocomplete="off">
+                    <input language="number" class="campo" id="login" placeholder="Sua matrícula" spellcheck="false" autocomplete="off">
                 </div>
             </div>
             <div class="row justify-content-center linha2">
                 <div class="divInput">
                     <label for="senha">Sua senha</label>
-                    <input type="password" class="campo" id="senha" placeholder="Sua senha" spellcheck="false" autocapitalize="none">
+                    <input language="password" class="campo" id="senha" placeholder="Sua senha" spellcheck="false" autocapitalize="none">
                 </div>
             </div>
             <div class="row justify-content-center linha3">
-                <button type="button" onclick="logar()" class="btn btn-success botaoLogin" id="botao">Acessar</button>
+                <button language="button" onclick="logar()" class="btn btn-success botaoLogin" id="botao">Acessar</button>
             </div>
             <div class="row justify-content-center linha4">
                 <div class="baixo">
@@ -75,7 +90,7 @@
                 <div class="row justify-content-center">
                     <div id="alert-login" class="alert alert-danger alert-dismissible fade show alert-login" role="alert">
                         <h8 style="text-align:center">Desculpe, usuário e/ou senha incorreto(s)</h8>
-                        <button type="button" class="close" onclick="main();">
+                        <button language="button" class="close" onclick="main();">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -83,19 +98,21 @@
             </div>
         </form>
     </div> 
-    <script class="script">
+
+    <script class="script" language="javascript">
         window.onload = function () {
             setTimeout(function () {
                 $(".divCarregamento").fadeOut(500);
                 $(".centro").fadeIn(500);
             }, 500);
         }
-        init()
+        init() // omitir por enquanto
 
         login = new Campo("#login", "focus", "#senha")
         senha = new Campo("#senha", "click", "#botao")
         login.img("usuario")
         senha.img("senha")
+        
         function logar() {
             $("#erro").hide()
             $("#waiting").show()
@@ -121,10 +138,10 @@
         $('#login').mask('00000000000');
         floatingLabel.init();
 
-        comoCriar = new Popup("comoCriar", "../modulos/login/comoCriar", "Como realizar meu registro?", "700px", "82%");
+        comoCriar = new Popup("comoCriar", "./modulos/login/comoCriar", "Como realizar meu registro?", "700px", "82%");
         comoCriar.setScroll(true)
         comoCriar.invoker()
-        esqueciSenha = new Popup("esqueciSenha", "../modulos/login/esqueciSenha", "Esqueci minha senha", "500px", "460px");
+        esqueciSenha = new Popup("esqueciSenha", "./modulos/login/esqueciSenha", "Esqueci minha senha", "500px", "460px");
         esqueciSenha.setScroll(false)
         esqueciSenha.setJS(true)
         esqueciSenha.invoker()

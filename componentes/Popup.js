@@ -1,6 +1,7 @@
 class Popup {
 
-    name; file; largura; altura; titulo; css; js; scroll; html;
+    //name; file; largura; altura; titulo; css; js; scroll; html;
+    // vamos seguir o ECMAScript 6   
     constructor(name, file, titulo, largura, altura) {
         this.name = name;
         this.file = file;
