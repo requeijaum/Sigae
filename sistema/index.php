@@ -120,10 +120,13 @@
         </div>
         <div id="consoleModal" class="modal consoleModal bottom-sheet">
             <div class="modal-content">
-                <b class="consoleTexto">Console do SiGAÊ</b>
+                <b class="consoleTexto">Console</b>
                 <div class="divBotoes">
-                    <a class="consoleBotao" style="margin-right: 5px" onclick="limparConsole()">Limpar</a>
-                    <a class="consoleBotao consoleBotao" onclick="fecharConsole()">Fechar</a>
+                    <a class="dropdown-button consoleBotao consoleBotao-ferramentas" data-activates="dropdownConsole">Ferramentas do console</a>
+                    <ul id="dropdownConsole" class="dropdown-content dropdown-console">
+                        <li><a style="text-decoration: none; " href="javascript:void(0)" onclick="limparConsole()"><i class="material-icons">delete_forever</i>Limpar console</a></li>
+                    </ul>
+                    <a class="consoleBotao" onclick="fecharConsole()">Fechar</a>
                 </div>
             </div>
             <div class="conteudoConsole"></div>

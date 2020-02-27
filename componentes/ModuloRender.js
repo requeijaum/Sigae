@@ -1,4 +1,4 @@
-var arrayModulos = []
+var arrayModulos = [], moduloAtual;
 
 class Modulo {
 
@@ -52,6 +52,7 @@ class Modulo {
             $(".breadcrumbs").attr("data-tooltip", classe.titulo);
             $(".breadcrumbs-tooltipped").tooltip({ delay: 50 });
             $(".content").append(data)
+            moduloAtual = classe;
             if (classe.js == true) {
                 try {
                     window["init_" + classe.id]()

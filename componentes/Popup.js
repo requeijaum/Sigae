@@ -56,7 +56,7 @@ class Popup {
             },
             onClose: function() {
                 try {
-                    removeAllSelection()
+                    selectAtual()
                 } catch(ex) {}
             },
             html: `${classe.html}`

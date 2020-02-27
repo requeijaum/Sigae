@@ -19,7 +19,7 @@ function initMaterialize() {
         });
         $('.consoleModal').modal({
             ready: function () { renderConsole() },
-            complete: function () { removeAllSelection() }
+            complete: function () { selectAtual() }
         });
     });
 }

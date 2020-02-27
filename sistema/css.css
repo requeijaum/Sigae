@@ -305,6 +305,7 @@ main {
 
 .modal-content {
     height: 82px !important;
+    padding-left: 10px !important;
 }
 
 .conteudoConsole {
@@ -312,13 +313,15 @@ main {
     overflow-x: auto;
     position: absolute;
     bottom: 0px;
-    width: 100%;
+    width: calc(100% - 10px);
     height: calc(100% - 82px);
 }
 
 .divBotoes {
     position: absolute;
     right: 20px;
+    height: 100%;
+    margin-top: 3px;
 }
 
 .consoleBotao {
@@ -328,10 +331,17 @@ main {
 
 .consoleBotao:hover {
     cursor: pointer;
+    color: rgb(38, 166, 154) !important;
+    text-decoration: underline !important;
+}
+
+.consoleBotao-ferramentas {
+    margin-right: 8px;
 }
 
 .consoleTexto {
     font-size: 22px;
+    height: 100%;
 }
 
 .consoleContent {

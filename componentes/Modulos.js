@@ -95,6 +95,11 @@ function selectLinha(linha) {
     }
 }
 
+function selectAtual() {
+    removeAllSelection()
+    selectLinha(moduloAtual.linha)
+}
+
 function nodeDaLinha(linha) {
     for (var i = 0; i < arrayLinhas.length; i++) {
         obj = arrayLinhas[i]
