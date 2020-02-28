@@ -1,0 +1,22 @@
+.inicio-nome {
+    font-size: 32px;
+    color: rgb(78, 95, 120);
+    white-space: nowrap;
+}
+
+.divInicioLinks {
+    margin-top: 30px;
+}
+
+.linkCard {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(78, 95, 120) !important;
+    transition: 200ms;
+    cursor: pointer
+}
+
+.linkCard:hover {
+    color: rgb(38, 166, 154) !important;
+}

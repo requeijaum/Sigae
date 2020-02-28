@@ -1,3 +1,46 @@
+<!-- 
+    Requião:
+
+    Rascunho usando FullCalendar com demonstração de outro projeto que fiz
+
+    - Onde devo colocar a API para alimentar o calendário?
+        > /componentes/APIs/fetch-events.php 
+
+    - verificar escopo do elemento "modulo"... devo colocar links e scripts dentro dele?
+
+-->
+<link href='../componentes/APIs/fullcalendar-4.2.0/packages/core/main.min.css'      rel='stylesheet' />
+<link href='../componentes/APIs/fullcalendar-4.2.0/packages/daygrid/main.min.css'   rel='stylesheet' />
+<link href='../componentes/APIs/fullcalendar-4.2.0/packages/timegrid/main.min.css'  rel='stylesheet' />
+
+<!-- link href='../../assets/js/fullcalendar-4.2.0/packages/bootstrap/main.min.css' rel='stylesheet' / -->
+<!--link rel="stylesheet" href="../../assets/css/bootstrap.min.css"-->
+
+<link href='../componentes/APIs/fullcalendar-4.2.0/packages/list/main.min.css'      rel='stylesheet' />
+
 <modulo>
-    calendario
+    <div class="row justify-content-center">
+        <img src="../icones/sigae-min.svg">
+    </div>
+    <!-- h1 class="nome inicio-nome">Calendário</h1 -->
+    <div onclick="$(this).fadeOut();" class="response" ></div>
+    <div id="calendar" class="divFullCalendar">
+    </div>
+
 </modulo>
+
+<script language="javascript"src='../componentes/APIs/fullcalendar-4.2.0/packages/core/main.min.js'></script>
+<script language="javascript"src='../componentes/APIs/fullcalendar-4.2.0/packages/daygrid/main.min.js'></script>
+<script language="javascript"src='../componentes/APIs/fullcalendar-4.2.0/packages/timegrid/main.min.js'></script>
+
+<!--script src='../componentes/APIs/jquery.min.js'></script-->
+
+<!-- script src='../../assets/js/fullcalendar-4.2.0/packages/bootstrap/main.min.js'></script -->
+<!--script src="../../assets/js/bootstrap.min.js"></script-->
+
+<script language="javascript"src='../componentes/APIs/fullcalendar-4.2.0/packages/list/main.min.js'></script>
+<script language="javascript"src='../componentes/APIs/fullcalendar-4.2.0/packages/moment/main.min.js'></script>
+<script language="javascript"src='../componentes/APIs/fullcalendar-4.2.0/packages/core/locales/pt-br.js'></script>
+
+<!-- código principal a seguir -->
+<script language="javascript"src='../componentes/APIs/calendarioCompleto.js'></script>
